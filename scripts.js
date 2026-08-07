@@ -39,13 +39,17 @@ Retorne APENAS um JSON válido neste formato:
 `;
 
 document.addEventListener("DOMContentLoaded", () => {
-    const inputFoto = document.querySelector('.foto');
-    const btnEntrar = document.getElementById('btn-entrar');
-    const btnSair = document.getElementById('btn-sair');
+    const inputCamera = document.getElementById("input-camera");
+const inputGaleria = document.getElementById("input-galeria");
+const btnEntrar = document.getElementById("btn-entrar");
+const btnSair = document.getElementById("btn-sair");
+if (inputCamera) {
+    inputCamera.addEventListener("change", lerfoto);
+}
 
-    if (inputFoto) {
-        inputFoto.addEventListener('change', lerfoto);
-    }
+if (inputGaleria) {
+    inputGaleria.addEventListener("change", lerfoto);
+}
 
     if (btnEntrar) {
         btnEntrar.addEventListener('click', realizarLoginOuCadastro);
@@ -141,7 +145,7 @@ function exibirMensagem(texto, color) {
 
 async function lerfoto() {
 
-    const inputFoto = document.querySelector(".foto");
+    const inputFoto = event.target;
 
     if (!inputFoto || inputFoto.files.length === 0) {
         alert("Selecione uma imagem.");

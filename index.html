@@ -31,11 +31,58 @@
             <button id="btn-sair" style="background: none; border: none; color: #e74c3c; font-size: 0.85rem; font-weight: bold; cursor: pointer; margin-top: 10px; text-decoration: underline;">Sair da conta</button>
         </div>
 
-        <label id="botao-foto-container">
-            📸 Toque para tirar foto do comprovante
-            <!-- Adicionado 'capture="environment"' para forçar a abertura da câmera no celular -->
-            <input class="foto" id="input-foto" type="file" accept="image/*" capture="environment">
-        </label>
+     <div style="display:flex; gap:10px; margin-top:20px; justify-content:center; flex-wrap:wrap;">
+
+    <!-- Botão Câmera -->
+    <label for="input-camera"
+        style="
+        background:#3498db;
+        color:white;
+        padding:12px 18px;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:bold;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        box-shadow:0 3px 8px rgba(0,0,0,.15);">
+
+        📸 Tirar Foto
+    </label>
+
+    <input
+        id="input-camera"
+        class="foto"
+        type="file"
+        accept="image/*"
+        capture="environment"
+        style="display:none;">
+
+    <!-- Botão Galeria -->
+    <label for="input-galeria"
+        style="
+        background:#2ecc71;
+        color:white;
+        padding:12px 18px;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:bold;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        box-shadow:0 3px 8px rgba(0,0,0,.15);">
+
+        🖼️ Carregar Foto
+    </label>
+
+    <input
+        id="input-galeria"
+        class="foto"
+        type="file"
+        accept="image/*"
+        style="display:none;">
+
+</div>
 
         <div id="lista-gastos" style="margin-top: 20px; padding: 10px; width: 100%;"></div>
     </div>
