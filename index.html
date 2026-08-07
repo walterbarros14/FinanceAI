@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.puter.com/v2/"></script>
+    <title>gasto na foto</title>
+</head>
+<body>
+    <div>
+        <p class="topo">Fotografe o comprovante. A IA anota para você.</p>
+        <h1>Gasto na foto 📸</h1>
+    </div>
+
+    <!-- ÁREA DE LOGIN E CADASTRO -->
+    <div class="caixa-total" id="caixa-login" style="margin-bottom: 25px; padding: 20px;">
+        <p style="margin-bottom: 15px; font-weight: bold;">Acesse seu Cadastro</p>
+        <input type="text" id="input-usuario" placeholder="Digite seu nome (Ex: João)" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; text-align: center; margin-bottom: 10px;">
+        <input type="password" id="input-senha" placeholder="Digite sua senha" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; text-align: center; margin-bottom: 15px;">
+        <button id="btn-entrar" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: #3498db; color: white; font-size: 1rem; font-weight: bold; cursor: pointer;">Entrar / Cadastrar</button>
+        <p id="mensagem-login" style="font-size: 0.85rem; color: #e74c3c; margin-top: 10px; display: none;"></p>
+    </div>
+
+    <!-- CONTEÚDO DO APLICATIVO -->
+    <div id="conteudo-app" style="display: none; width: 100%; max-width: 400px; text-align: center;">
+        <div class="caixa-total">
+            <p>Total gasto (<span id="nome-perfil"></span>)</p>
+            <h2 class="total-gasto" id="valor-total">R$ 0,00</h2>
+            <p id="qtd-comprovantes">0 comprovantes lidos</p>
+            <button id="btn-sair" style="background: none; border: none; color: #e74c3c; font-size: 0.85rem; font-weight: bold; cursor: pointer; margin-top: 10px; text-decoration: underline;">Sair da conta</button>
+        </div>
+
+        <label id="botao-foto-container">
+            📸 Toque para tirar foto do comprovante
+            <!-- Adicionado 'capture="environment"' para forçar a abertura da câmera no celular -->
+            <input class="foto" id="input-foto" type="file" accept="image/*" capture="environment">
+        </label>
+
+        <div id="lista-gastos" style="margin-top: 20px; padding: 10px; width: 100%;"></div>
+    </div>
+</body>
+<script src="scripts.js"></script>
+</html>

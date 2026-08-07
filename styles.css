@@ -1,0 +1,152 @@
+/* Configurações Globais e Cores */
+:root {
+    --cor-fundo: #f4f7f6;
+    --cor-card: #ffffff;
+    --cor-texto: #2c3e50;
+    --cor-texto-secundario: #7f8c8d;
+    --cor-primaria: #3498db;
+    --cor-sucesso: #2ecc71;
+    --cor-sombra: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Cabeçalho do Site */
+header, div:first-of-type {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--cor-texto);
+    margin-top: 5px;
+}
+
+.topo {
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+    font-weight: 500;
+}
+
+/* Painel de Exibição do Total Gasto */
+.caixa-total {
+    background-color: var(--cor-card);
+    border-radius: 20px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px var(--cor-sombra);
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease;
+}
+
+.caixa-total p:first-of-type {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 5px;
+}
+
+.total-gasto {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--cor-sucesso);
+    margin-bottom: 5px;
+}
+
+#qtd-comprovantes {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    background-color: #f8f9fa;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* Lista de Gastos Escaneados */
+#lista-gastos {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 100px; /* Espaço para não cobrir o botão flutuante */
+}
+
+.item-gasto {
+    background-color: var(--cor-card);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px var(--cor-sombra);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 5px solid var(--cor-primaria);
+    animation: surgimento 0.3s ease-out;
+}
+
+/* Efeito de animação ao adicionar novo gasto */
+@keyframes surgimento {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão Flutuante de Fotografar (Label) */
+label {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor-texto);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    z-index: 100;
+    white-space: nowrap;
+}
+
+label:hover {
+    background-color: #1a252f;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+label:active {
+    transform: translateX(-50%) translateY(1px);
+}
+
+/* Esconde o input original feio do navegador */
+input[type="file"] {
+    display: none;
+}
